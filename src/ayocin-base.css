@@ -1,0 +1,34 @@
+/* ==================================================
+   TYPOGRAPHY (@FONT-FACE)
+   ================================================== */
+@font-face {
+  font-family: 'Systemia';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Systemia-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Systemia';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Systemia-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Systemia';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Systemia-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Azeret Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/AzeretMono-Medium.woff2') format('woff2');
+}
