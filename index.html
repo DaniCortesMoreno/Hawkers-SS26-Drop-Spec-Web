@@ -205,8 +205,10 @@
           </section>
 
           <!-- SECTION 1: CHAINED CONTENT -->
-          <section class="min-h-screen relative grid text-cream" data-animation="chained-content" style="--h:5; background-color: #08090b;">
+          <section class="min-h-screen relative grid text-cream" data-animation="chained-content" style="--h:5; background-color: #08090b; isolation: isolate;">
             <style>
+              html.is-loading [data-animation="chained-content"] [data-content-item],
+              html.is-loading [data-animation="chained-content"] [data-content-description-parent] { opacity: 0; }
               [data-mosaic-stage] .mosaic-box { position: absolute; overflow: hidden; }
               [data-mosaic-stage] .mosaic-box > img {
                 width: 100%; height: 100%; display: block;
