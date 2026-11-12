@@ -205,18 +205,55 @@
           </section>
 
           <!-- SECTION 1: CHAINED CONTENT -->
-          <section class="min-h-screen relative grid text-cream" data-animation="chained-content" style="--h:5">
+          <section class="min-h-screen relative grid text-cream" data-animation="chained-content" style="--h:5; background-color: #08090b;">
+            <style>
+              [data-mosaic-stage] .mosaic-box { position: absolute; overflow: hidden; }
+              [data-mosaic-stage] .mosaic-box > img {
+                width: 100%; height: 100%; display: block;
+                object-fit: cover; object-position: 50% 0%;
+                will-change: transform;
+              }
+              [data-mosaic-stage] .mosaic-box--tl { left: -1%; top: 0%; width: 57%; height: 61.5%; }
+              [data-mosaic-stage] .mosaic-box--tr { left: 49%; top: 0%; width: 51%; height: 61.5%; }
+              [data-mosaic-stage] .mosaic-box--bl { left: 0%; top: 40%; width: 51%; height: 60%; }
+              [data-mosaic-stage] .mosaic-box--br { left: 44%; top: 39.5%; width: 57%; height: 60.5%; }
+              [data-animation="chained-content"] [data-content-item] { transform: translateZ(0); }
+              @media (min-width: 768px) {
+                [data-mosaic-stage] .mosaic-box--bl { left: -2%; top: 40%; width: 55%; height: 60%; }
+                [data-mosaic-stage] .mosaic-box--br { left: 44%; top: 39.5%; width: 66%; height: 60.5%; }
+              }
+            </style>
             <span class="w-full h-full bg-black opacity-0 absolute z-10 left-0 top-0 pointer-events-none" data-animation="fade" data-from="0" data-to="0.35" data-scrub data-ease="none" data-repeat data-start="bottom bottom" data-end="+=100%"></span>
-            <div class="sticky top-0 w-full h-screen col-start-1 row-start-1 row-end-1 col-span-1 -my-[100vh] !-my-[100svh]">
-              <picture class="w-full h-auto flex object-contain sticky left-0 top-0 hidden md:block" style="--aspect:1.6209476309226933" data-background="desktop">
-                <img class="block w-full min-h-screen object-cover" src="/ayocin_assets/img_6.jpg" alt="Hawkers SS26 Drop 7 Alto Rendimiento" width="2600" height="1604" draggable="false">
-              </picture>
-              <picture class="w-full h-auto flex object-contain sticky left-0 top-0 md:hidden" style="--aspect:0.8055555555555556" data-background="mobile">
-                <img class="block w-full min-h-screen object-cover" src="/ayocin_assets/img_7.jpg" alt="Hawkers SS26 Drop 7 Alto Rendimiento" width="1856" height="2304" draggable="false">
-              </picture>
-              <span class="w-full h-full absolute inset-0 z-2 pointer-events-none" style="background: rgba(22, 24, 28, 0.42);"></span>
+            <div class="sticky top-0 w-full h-screen col-start-1 row-start-1 row-end-1 col-span-1 -my-[100vh] !-my-[100svh] overflow-hidden" style="background-color: #08090b; z-index: 1; isolation: isolate;">
+              <div class="absolute inset-0 w-full h-full" data-mosaic-stage>
+                <!-- Panel 1: Top-Left (Attached 4) -->
+                <div class="absolute inset-0 w-full h-full will-change-transform" data-mosaic-panel="0" data-mosaic-from="-62" style="clip-path: polygon(0% 0%, 55.74% 0%, 50.95% 39.3%, 0% 60.8%);">
+                  <div class="mosaic-box mosaic-box--tl">
+                    <img src="/ayocin_assets/mosaic_1_tl.jpg" alt="Hawkers SS26 Drop 7 — Vista frontal lateral" width="1024" height="1024" draggable="false">
+                  </div>
+                </div>
+                <!-- Panel 2: Top-Right (Attached 3) -->
+                <div class="absolute inset-0 w-full h-full will-change-transform" data-mosaic-panel="1" data-mosaic-from="56" style="clip-path: polygon(56.44% 0%, 100% 0%, 100% 38.8%, 49.04% 60.75%);">
+                  <div class="mosaic-box mosaic-box--tr">
+                    <img src="/ayocin_assets/mosaic_2_tr.jpg" alt="Hawkers SS26 Drop 7 — Vista frontal directa" width="1024" height="1024" draggable="false">
+                  </div>
+                </div>
+                <!-- Panel 3: Bottom-Left (Attached 2) -->
+                <div class="absolute inset-0 w-full h-full will-change-transform" data-mosaic-panel="2" data-mosaic-from="-56" style="clip-path: polygon(0% 62.0%, 50.81% 40.5%, 43.56% 100%, 0% 100%);">
+                  <div class="mosaic-box mosaic-box--bl">
+                    <img src="/ayocin_assets/mosaic_3_bl.jpg" alt="Hawkers SS26 Drop 7 — Perfil urbano" width="1024" height="1024" draggable="false">
+                  </div>
+                </div>
+                <!-- Panel 4: Bottom-Right (Attached 5) -->
+                <div class="absolute inset-0 w-full h-full will-change-transform" data-mosaic-panel="3" data-mosaic-from="62" style="clip-path: polygon(48.89% 61.95%, 100% 40.0%, 100% 100%, 44.26% 100%);">
+                  <div class="mosaic-box mosaic-box--br">
+                    <img src="/ayocin_assets/mosaic_4_br.jpg" alt="Hawkers SS26 Drop 7 — Plano entero en movimiento" width="1024" height="1024" draggable="false">
+                  </div>
+                </div>
+              </div>
+              <span class="w-full h-full absolute inset-0 pointer-events-none" style="z-index: 2; background: radial-gradient(circle at 25% 50%, rgba(10, 11, 14, 0.36) 0%, rgba(10, 11, 14, 0.10) 55%, rgba(10, 11, 14, 0.24) 100%);"></span>
             </div>
-            <div class="w-full h-screen sticky top-0 grid p-12 laptop:p-18 col-start-1 col-span-1 row-start-1 row-end-1 laptop:pt-[9.4rem] -my-[100vh] !-my-[100svh]">
+            <div class="w-full h-screen sticky top-0 grid p-12 laptop:p-18 col-start-1 col-span-1 row-start-1 row-end-1 laptop:pt-[9.4rem] -my-[100vh] !-my-[100svh]" style="z-index: 5; isolation: isolate;">
               <div class="w-full h-full relative pt-50 pb-150 md:py-100 col-start-1 col-span-1 row-start-1 row-end-1 flex items-center" data-content-item>
                 <h2 class="mb-0 text-center h3 tracking-normal max-w-[42rem] lg:max-w-[56rem] laptop:max-w-[68rem] mx-auto w-full px-30 md:px-0" data-content-title>
                   Alto rendimiento deportivo. Sin distracciones. Sin excusas.
